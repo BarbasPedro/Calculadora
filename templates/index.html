@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculadora da Apple</title>
+    <link rel="stylesheet" href="../static/estilos.css">
+
+    <link rel="icon" href="../images/iconeCalculadora.jpg">
+</head>
+<body>    
+    <img src="../images/iconApple.jpg" alt="iconApple" id="iconeApple">
+    <img src="../images/iconeCalculadora.jpg" alt="iconeCalculadora" id="iconeCalculadora">
+    <h1>Calculadora</h1>
+    <div>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="display" readonly></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" id="botao" class="plinha" onclick="clearDisplay()"></td>
+            <td><input type="button" value="+/-" id="botao" class="plinha" onclick="Clique('*-1')"></td>
+            <td><input type="button" value="%" id="botao" class="plinha" onclick="Clique('/100')"></td>
+            <td><input type="button" value="/" id="botao" class="operacoes" onclick="Clique(value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="8" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="9" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="x" id="botao" class="operacoes" onclick="Clique('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="5" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="6" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="-" id="botao" class="operacoes" onclick="Clique(value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="2" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="3" id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="+" id="botao" class="operacoes" onclick="Clique(value)"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="0" id="zero" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="," id="botao" class="numeros" onclick="Clique(value)"></td>
+            <td><input type="button" value="=" id="botao" class="operacoe" onclick="calcula()"></td>
+        </tr>
+    </div>
+    </table>
+    <script>
+        function Clique(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function calcula() {
+            var display = document.getElementById('display');
+            display.value = eval(display.value);
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+    </script>
+    
+</body>
+</html>
